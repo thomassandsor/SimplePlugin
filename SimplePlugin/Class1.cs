@@ -19,10 +19,6 @@ namespace SimplePlugin
                 tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
                 tracingService.Trace("First tracing test");
 
-
-                //Call Custom Function
-                //AccountMath();
-
             }
             catch (Exception ex)
             {
