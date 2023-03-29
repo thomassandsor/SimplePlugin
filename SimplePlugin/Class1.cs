@@ -17,6 +17,8 @@ namespace SimplePlugin
                 context = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
                 service = ((IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory))).CreateOrganizationService(context.UserId);
                 tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
+                
+                //Insert your code
                 tracingService.Trace("First tracing test");
                 throw new InvalidPluginExecutionException("test");
 
@@ -24,7 +26,6 @@ namespace SimplePlugin
             catch (Exception ex)
             {
                 tracingService.Trace(ex.Message);
-                throw;
                 throw new InvalidPluginExecutionException(ex.Message);
             }
         }
