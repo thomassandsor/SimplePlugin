@@ -6,9 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePlugin", "SimplePlugin\SimplePlugin.csproj", "{FC2C7531-CE93-4458-99B5-37BE938A0A0C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6C4F8230-67DB-474E-9447-80A7A583A82A}"
-	ProjectSection(SolutionItems) = preProject
-		CurrencyCalculation.cs = CurrencyCalculation.cs
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
