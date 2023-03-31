@@ -18,22 +18,12 @@ namespace SimplePlugin
             service = ((IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory))).CreateOrganizationService(context.UserId);
             tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
             currentEntity = (Entity)context.InputParameters["Target"];
+            preImage = context.PreEntityImages["PreImage2"];
+
+
             tracingService.Trace("before image");
-            tracingService.Trace("target: " + currentEntity.LogicalName);
+            //tracingService.Trace("target: " + currentEntity.LogicalName);
             
-
-
-
-            if (context.PreEntityImages.Contains("PreImage2"))
-            {
-                preImage = context.PreEntityImages["PreImage2"];
-                tracingService.Trace("preimagebefore: " + context.PreEntityImages["PreImage2"].GetAttributeValue<int>("plugin_integera"));
-            }
-            else
-            {
-                tracingService.Trace("PreImage not found");
-                return;
-            }
             //preImage = context.PreEntityImages["PreImage"];
 
                 //Enter Custom Code
