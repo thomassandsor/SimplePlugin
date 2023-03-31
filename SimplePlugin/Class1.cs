@@ -38,7 +38,7 @@ namespace SimplePlugin
 
                 //Enter Custom Code
                 tracingService.Trace("First tracing test");
-                //throw new InvalidPluginExecutionException("test");
+                throw new InvalidPluginExecutionException("test");
 
                 CalculateSum();
 
