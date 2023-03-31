@@ -17,7 +17,7 @@ namespace SimplePlugin
             service = ((IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory))).CreateOrganizationService(context.UserId);
             tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
             RecordAfterUpdate = context.PostEntityImages["PostImageMain"];
-            
+
             //Enter Custom Code
             tracingService.Trace("You are awesome! Congratulations on the first plugin");
 
