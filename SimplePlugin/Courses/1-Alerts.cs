@@ -18,12 +18,12 @@ namespace SimplePlugin
             tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
             RecordAfterUpdate = context.PostEntityImages["PostImageMain"];
 
-            /* --------------    Start Custom Functions   ------------------------*/
+            /* --------------    Call Functions   ------------------------*/
 
             tracingService.Trace("You are awesome! Congratulations on the first plugin");
 
 
-            /* --------------    End Custom Functions   ------------------------*/
+            /* --------------    Call Functions   ------------------------*/
 
         }
     }
