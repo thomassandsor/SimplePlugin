@@ -18,12 +18,16 @@ namespace SimplePlugin
             tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
             RecordAfterUpdate = context.PostEntityImages["PostImageMain"];
 
-            //Enter Custom Code
-            tracingService.Trace("You are awesome! Congratulations on the first plugin");
+            /************* --------------    Call Functions   ------------------------**************/
 
             CalculateSumInteger();
 
+
+            /************* --------------    Call Functions   ------------------------**************/
+
         }
+
+        /************* --------------    Begin Custom Functions   ------------------------**************/
         private void CalculateSumInteger()
         {
             // Obtain the values of the integer fields
@@ -38,5 +42,10 @@ namespace SimplePlugin
             updatedEntity["plugin_resultintegercalculation"] = SumInteger;
             service.Update(updatedEntity);
         }
+
+
+        /************* --------------    End Custom Functions  ------------------------**************//
+
+
     }
 }
