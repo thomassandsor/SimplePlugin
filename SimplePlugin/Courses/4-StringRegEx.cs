@@ -21,7 +21,7 @@ namespace SimplePlugin
 
             /* --------------    Start Custom Functions   ------------------------*/
 
-            tracingService.Trace("You are awesome! Congratulations on the first plugin");
+            tracingService.Trace("You are awesome!");
             RegExString();
 
             /* --------------    End Custom Functions   ------------------------*/
@@ -35,11 +35,11 @@ namespace SimplePlugin
             tracingService.Trace($"Input string: {inputString}");
 
             // Get the value of the input field and apply the regular expression
-            var inputString = inputEntity.GetAttributeValue<string>("plugin_stringinput");
+            var inputString = RecordAfterUpdate.GetAttributeValue<string>("plugin_stringinput");
             var regexResult = Regex.Replace(inputString, @"\s+", string.Empty).ToLower();
 
             // Create a new entity with the regex result and update the output field
-            var outputEntity = new Entity(inputEntity.LogicalName, inputEntity.Id);
+            var outputEntity = new Entity(RecordAfterUpdate.LogicalName, RecordAfterUpdate.Id);
             outputEntity["plugin_afterregex"] = regexResult;
             service.Update(outputEntity);
 
@@ -50,9 +50,6 @@ namespace SimplePlugin
 
 
         /************* --------------    End Custom Functions  ------------------------**************/
-
-
-
 
 
     }
