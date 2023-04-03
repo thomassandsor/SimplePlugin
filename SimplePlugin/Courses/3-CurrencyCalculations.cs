@@ -20,7 +20,7 @@ namespace SimplePlugin
 
             /************* --------------    Call Functions   ------------------------**************/
 
-            CalculateSumInteger();
+            CalculateSumCurrency();
 
 
             /************* --------------    Call Functions   ------------------------**************/
@@ -28,18 +28,21 @@ namespace SimplePlugin
         }
 
         /************* --------------    Begin Custom Functions   ------------------------**************/
-        private void CalculateSumInteger()
+        private void CalculateSumCurrency()
         {
             // Obtain the values of the integer fields
-            int fieldA = RecordAfterUpdate.GetAttributeValue<int>("plugin_integera");
-            int fieldB = RecordAfterUpdate.GetAttributeValue<int>("plugin_integerb");
+            Money fieldA = RecordAfterUpdate.GetAttributeValue<Money>("plugin_currencya");
+            Money fieldB = RecordAfterUpdate.GetAttributeValue<Money>("plugin_currencyb");
 
-            // Calculate the sum of the integer fields
-            int SumInteger = fieldA + fieldB;
+            // Calculate the sum of the currency fields
+            decimal sumCurrency = fieldA.Value + fieldB.Value;
 
-            // Updating the record with the new field ONLY. Don't update alle fields on a record, because it can cause infinite loop. 
+            // Create a new money object for the calculated value
+            Money sumMoney = new Money(sumCurrency);
+
+            // Update the record with the new field
             Entity updatedEntity = new Entity(RecordAfterUpdate.LogicalName, RecordAfterUpdate.Id);
-            updatedEntity["plugin_resultintegercalculation"] = SumInteger;
+            updatedEntity["plugin_resultcurrencycalculation"] = sumMoney;
             service.Update(updatedEntity);
         }
 
