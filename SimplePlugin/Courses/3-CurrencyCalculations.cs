@@ -1,6 +1,6 @@
 using System;
+using System.Text.RegularExpressions;
 using Microsoft.Xrm.Sdk;
-using Microsoft.Xrm.Sdk.Query;
 
 namespace SimplePlugin
 {
@@ -18,18 +18,16 @@ namespace SimplePlugin
             tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
             RecordAfterUpdate = context.PostEntityImages["PostImageMain"];
 
-            /************* --------------    Call Functions   ------------------------**************/
+            /* --------------    Call Functions   ------------------------*/
 
             CalculateSumCurrency();
 
-
-            /************* --------------    Call Functions   ------------------------**************/
-
+            /* --------------    Call Functions   ------------------------*/
         }
 
-        /************* --------------    Begin Custom Functions   ------------------------**************/
         private void CalculateSumCurrency()
         {
+            tracingService.Trace("Inside");
             // Obtain the values of the integer fields
             Money fieldA = RecordAfterUpdate.GetAttributeValue<Money>("plugin_currencya");
             Money fieldB = RecordAfterUpdate.GetAttributeValue<Money>("plugin_currencyb");
@@ -45,10 +43,5 @@ namespace SimplePlugin
             updatedEntity["plugin_resultcurrencycalculation"] = sumMoney;
             service.Update(updatedEntity);
         }
-
-
-        /************* --------------    End Custom Functions  ------------------------**************/
-
-
     }
 }

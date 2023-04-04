@@ -1,6 +1,6 @@
 using System;
+using System.Text.RegularExpressions;
 using Microsoft.Xrm.Sdk;
-using Microsoft.Xrm.Sdk.Query;
 
 namespace SimplePlugin
 {
@@ -18,16 +18,13 @@ namespace SimplePlugin
             tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
             RecordAfterUpdate = context.PostEntityImages["PostImageMain"];
 
-            /************* --------------    Call Functions   ------------------------**************/
+            /* --------------    Call Functions   ------------------------*/
 
             CalculateSumInteger();
 
-
-            /************* --------------    Call Functions   ------------------------**************/
-
+            /* --------------    Call Functions   ------------------------*/
         }
 
-        /************* --------------    Begin Custom Functions   ------------------------**************/
         private void CalculateSumInteger()
         {
             // Obtain the values of the integer fields
@@ -42,10 +39,5 @@ namespace SimplePlugin
             updatedEntity["plugin_resultintegercalculation"] = SumInteger;
             service.Update(updatedEntity);
         }
-
-
-        /************* --------------    End Custom Functions  ------------------------**************/
-
-
     }
 }
