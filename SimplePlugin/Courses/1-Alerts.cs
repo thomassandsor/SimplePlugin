@@ -6,7 +6,6 @@ namespace SimplePlugin
     public class SimplePlugin : IPlugin
     {
         IOrganizationService service;
-        Entity RecordAfterUpdate;
         IPluginExecutionContext context;
         ITracingService tracingService;
 
@@ -15,7 +14,6 @@ namespace SimplePlugin
             context = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
             service = ((IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory))).CreateOrganizationService(context.UserId);
             tracingService = (ITracingService)serviceProvider.GetService(typeof(ITracingService));
-            RecordAfterUpdate = context.PostEntityImages["PostImageMain"];
 
             /* --------------    Call Functions   ------------------------*/
 
