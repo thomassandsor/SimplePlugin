@@ -32,7 +32,7 @@ namespace SimplePlugin
             var regexResult = Regex.Replace(inputString, @"\s+", string.Empty).ToLower();
 
             // Create a new entity with the regex result and update the output field
-            var updatedEntity = new Entity(RecordAfterUpdate.LogicalName, RecordAfterUpdate.Id);
+            Entity updatedEntity = new Entity(RecordAfterUpdate.LogicalName, RecordAfterUpdate.Id);
             updatedEntity["plugin_stringregexafter"] = regexResult;
             service.Update(updatedEntity);
         }
