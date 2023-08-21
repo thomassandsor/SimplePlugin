@@ -26,7 +26,6 @@ namespace SimplePlugin
 
         private void CalculateSumCurrency()
         {
-            tracingService.Trace("Inside");
             // Obtain the values of the integer fields
             Money fieldA = RecordAfterUpdate.GetAttributeValue<Money>("plugin_currencya");
             Money fieldB = RecordAfterUpdate.GetAttributeValue<Money>("plugin_currencyb");
