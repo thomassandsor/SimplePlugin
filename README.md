@@ -12,3 +12,7 @@ It's a 7 part series of videos explaining the proces
 5. Integer - working with integers
 6. Currency - working with currencies
 7. RegEx - Working with strings
+
+https://crmkeeper.com/plugins-4-dummies/ <- blog entries with more infomration
+
+### Good luck 🙌🥳
