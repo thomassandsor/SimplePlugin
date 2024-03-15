@@ -4,6 +4,8 @@ Pro-Code can for some people seem like it's miles away, and something you might 
 
 The intention of this course is to give you the starting knowledge so that you can advance further if you feel this is within your interrest. Most important thing to succeed with this course is to try, try and try some more. Eventually you will learn something new that you didn't know before.  
 
+Together with this course on YouTube is a solutuion file that you download to your dev environment, and example code that will work directly from GitHub. 
+
 https://www.youtube.com/playlist?list=PL4KxKtesf6Zei-U7YDbVy81ye06svgvHl
 
 It's a 7 part series of videos explaining the proces
